@@ -13,7 +13,7 @@ import BiorhythmCard from "./componentes/BiorhythmCard";
 
 function App() {
   const [nascimento, setNascimento] = useState("");
-  const dataAlvo = new Date().toISOString();
+  const [dataAlvo, setAlvo] = useState("");
   return (
     <IonApp>
       <IonHeader>
@@ -22,7 +22,7 @@ function App() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        { nascimento &&
+        { nascimento && dataAlvo &&
           <BiorhythmCard dataNascimento={nascimento} dataAlvo={dataAlvo} />
         }
         <IonItem>
@@ -33,6 +33,16 @@ function App() {
             displayFormat="DD/MM/YYYY"
             value={nascimento}
             onIonChange={(event) => setNascimento(event.detail.value)}
+          />
+        </IonItem>
+        <IonItem>
+        <IonLabel position="floating">
+            Data Alvo:
+          </IonLabel>
+          <IonDatetime
+            displayFormat="DD/MM/YYYY"
+            value={dataAlvo}
+            onIonChange={(event) => setAlvo(event.detail.value)}
           />
         </IonItem>
       </IonContent>
