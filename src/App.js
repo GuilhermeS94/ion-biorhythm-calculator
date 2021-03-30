@@ -7,11 +7,13 @@ import {
   IonItem,
   IonLabel,
   IonInput,
+  IonDatetime,
 } from '@ionic/react';
 import React, { useState } from 'react';
 
 function App() {
   const [nome, setNome] = useState("");
+  const [nascimento, setNascimento] = useState("");
   return (
     <IonApp>
       <IonHeader>
@@ -21,7 +23,7 @@ function App() {
       </IonHeader>
       <IonContent className="ion-padding">
         <IonItem>
-          <IonLabel>
+          <IonLabel position="floating">
             Nome:
           </IonLabel>
           <IonInput
@@ -30,6 +32,17 @@ function App() {
           />
         </IonItem>
         <p>Nome: {nome}</p>
+        <IonItem>
+        <IonLabel position="floating">
+            Nascimento:
+          </IonLabel>
+          <IonDatetime
+            displayFormat="DD/MM/YYYY"
+            value={nascimento}
+            onIonChange={(event) => setNascimento(event.detail.value)}
+          />
+        </IonItem>
+        <p>Nascimento: {nascimento}</p>
       </IonContent>
     </IonApp>
   );
