@@ -10,9 +10,10 @@ import {
 } from '@ionic/react';
 import React, { useState } from 'react';
 import BiorhythmCard from "./componentes/BiorhythmCard";
+import { useCustomLocalStorage } from "./utils/customhooks";
 
 function App() {
-  const [nascimento, setNascimento] = useState("");
+  const [nascimento, setNascimento] = useCustomLocalStorage("nascimento", "");
   const [dataAlvo, setAlvo] = useState("");
   return (
     <IonApp>
