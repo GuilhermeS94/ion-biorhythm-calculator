@@ -22,6 +22,9 @@ function App() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        { nascimento &&
+          <BiorhythmCard dataNascimento={nascimento} dataAlvo={dataAlvo} />
+        }
         <IonItem>
         <IonLabel position="floating">
             Nascimento:
@@ -32,7 +35,6 @@ function App() {
             onIonChange={(event) => setNascimento(event.detail.value)}
           />
         </IonItem>
-        <BiorhythmCard dataAlvo={dataAlvo} />
       </IonContent>
     </IonApp>
   );
