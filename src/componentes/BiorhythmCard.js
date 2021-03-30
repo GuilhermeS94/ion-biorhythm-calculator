@@ -1,16 +1,21 @@
+import React from "react";
 import { 
     IonCard,
     IonCardContent,
     IonCardHeader,
     IonCardTitle
 } from "@ionic/react";
-import React from "react";
+import dayjs from "dayjs";
+
+function formatarData(isoStringData){
+    return dayjs(isoStringData).format("DD/MM/YYYY");
+}
 
 function BiorhythmCard({ dataAlvo }){
     return (
         <IonCard className="ion-text-center">
           <IonCardHeader>
-            <IonCardTitle>{dataAlvo}</IonCardTitle>
+            <IonCardTitle>{formatarData(dataAlvo)}</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <p>Físico: XX%</p>
