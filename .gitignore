@@ -134,3 +134,8 @@ temp/
 # Ignore all local history of files
 .history
 .ionide
+
+build/
+.gradle/
+android/
+ios/
