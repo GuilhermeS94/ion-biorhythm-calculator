@@ -14,3 +14,15 @@ export function calcularBiorhythms(dataNascimento, dataAlvo){
         intelectual: calcularBiorhythm(dataNascimento, dataAlvo, 33)
     };
 }
+
+export function biorhythmsSeries(dataNascimento, dataInicial, tamanho){
+    const retorno = [];
+    const diaInicio = dayjs(dataInicial).startOf("day");
+    var diaAlvo = "";
+    for(let i=0; i<tamanho; i++){
+        diaAlvo = diaInicio.add(i, "days").toISOString();
+        retorno.push(calcularBiorhythms(dataNascimento, diaAlvo));
+    }
+
+    return retorno;
+}

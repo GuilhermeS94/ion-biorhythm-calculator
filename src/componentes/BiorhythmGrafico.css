@@ -1,0 +1,11 @@
+.biorhythm-grafico .emocional path {
+    stroke: var(--app-emocional-cor);
+}
+
+.biorhythm-grafico .fisico path {
+    stroke: var(--app-fisico-cor);
+}
+
+.biorhythm-grafico .intelectual path {
+    stroke: var(--app-intelectual-cor);
+}
